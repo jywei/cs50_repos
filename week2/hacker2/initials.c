@@ -7,13 +7,13 @@ int main(void)
 {
     string name = GetString();
     
-    if ( name[0] != ' ' )
-    {
-        printf("%c", toupper(name[0]));
-    }
     for ( int i = 0, n = strlen(name); i < n; i++ )
     {
-        if ( name[i] == ' ' && name[i + 1] != '\0' ) 
+        if ( i == 0 && name[i] != ' ' )
+        {
+            printf("%c", toupper(name[i]));
+        }
+        if ( name[i] == ' ' && name[i + 1] != ' ' && name[i + 1] != '\0' ) 
         {
             printf("%c", toupper(name[i + 1])); 
             i++;
