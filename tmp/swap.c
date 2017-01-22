@@ -17,7 +17,7 @@ char *reverse_iterative(char *s)
     return s;
 }
 
-char *reverse_recursive(char *s)
+char *reverse(char *s)
 {
     static int time = 0;
     static int len = 0;
@@ -33,14 +33,14 @@ char *reverse_recursive(char *s)
 
     swap(s + time, s + len - 1 - time);
     time += 1;
-    return reverse_recursive(s);
+    return reverse(s);
 
 }
 
 
 int main(){
     char str[10] = "hello";
-    reverse_recursive(str);
-    printf("%s\n",  reverse_recursive(str));
+    reverse(str);
+    printf("%s\n",  reverse(str));
     return 0;
 }
