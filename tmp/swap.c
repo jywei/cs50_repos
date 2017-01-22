@@ -1,26 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-void swap(char *c1, char *c2)
-{
-    *c1 ^= *c2 ^= *c1 ^= *c2;
-}
-
-char *reverse_iterative(char *s)
-{
-    int len = strlen(s);
-    int i;
-    for ( i = 0; i < len / 2; i++)
-    {
-        swap(s + i, s + (len - 1 - i));
-    }
-    return s;
-}
-
 char *reverse(char *s)
 {
     static int time = 0;
     static int len = 0;
+    int tmp;
 
     if (time == 0)
     {
@@ -31,14 +16,17 @@ char *reverse(char *s)
         return s;
     }
 
-    swap(s + time, s + len - 1 - time);
+    tmp = *(s + time);
+    *(s + time) = *(s + len - 1 - time);
+    *(s + len - 1 - time) = tmp;
+
     time += 1;
     return reverse(s);
 
 }
 
-
-int main(){
+int main()
+{
     char str[10] = "hello";
     reverse(str);
     printf("%s\n",  reverse(str));
