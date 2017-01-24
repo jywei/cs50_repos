@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <cs50.h>
 
 char *reverse(char *s)
 {
@@ -15,7 +16,7 @@ char *reverse(char *s)
     {
         return s;
     }
-
+    // swap
     tmp = *(s + time);
     *(s + time) = *(s + len - 1 - time);
     *(s + len - 1 - time) = tmp;
@@ -29,6 +30,6 @@ int main()
 {
     char str[10] = "hello";
     reverse(str);
-    printf("%s\n",  reverse(str));
+    printf("%s\n", reverse(str));
     return 0;
 }
