@@ -13,3 +13,7 @@ char ch1 = fgetc(ptr1);
 // file get the first character of the file, reads, and read only, then returns the next character from the file pointed to
 char ch2 = fgetc(ptr2);
 // this will return errors
+
+fputc('A', ptr2); // must be 'a' or 'r'
+
+fputc('!', ptr3);
