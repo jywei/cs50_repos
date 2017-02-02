@@ -14,7 +14,7 @@ long long read_card_num(const char *p_prompt)
     while (!correct_input)
     {
         printf("%s", p_prompt);
-        result = GetLongLong();
+        result = get_long_long();
 
         if (result >= 0)
         {
