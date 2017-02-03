@@ -17,11 +17,13 @@ int main(void)
 
     int count = 0;
     long long digits = card_number;
+
     while (digits > 0)
     {
-        digits = digits / 10;
+        digits /= 10;
         count++;
     }
+
     if ((count != 13) && (count != 15) && (count != 16))
         printf("INVALID\n");
 
@@ -30,7 +32,7 @@ int main(void)
     for (int i = 0; i < count; i++)
     {
         number[i] = card_number % 10;
-        card_number = card_number / 10;
+        card_number /= 10;
     }
 
     int original_number[count];
@@ -41,14 +43,14 @@ int main(void)
         number[i] *= 2;
 
     int v = 0;
-    int temp;
+    int tmp;
 
     if (count == 13)
     {
         for (int i = 0; i < count; i++)
         {
-            temp = (number[i] % 10) + (number[i] / 10 % 10);
-            v += temp;
+            tmp = (number[i] % 10) + (number[i] / 10 % 10);
+            v += tmp;
         }
         if ((original_number[12] == 4) && (v % 10 == 0))
             printf("VISA\n");
@@ -60,8 +62,8 @@ int main(void)
     {
         for (int i = 0; i < count; i++)
         {
-            temp = (number[i] % 10) + (number[i] / 10 % 10);
-            v += temp;
+            tmp = (number[i] % 10) + (number[i] / 10 % 10);
+            v += tmp;
         }
         if ((original_number[14] == 3) && (v % 10 == 0) && (original_number[13] == 4 || original_number[13] == 7))
             printf("AMEX\n");
@@ -73,8 +75,8 @@ int main(void)
     {
         for (int i = 0; i < count; i++)
         {
-            temp = (number[i] % 10) + (number[i] / 10 % 10);
-            v += temp;
+            tmp = (number[i] % 10) + (number[i] / 10 % 10);
+            v += tmp;
         }
         if (original_number[15] == 4 && v % 10 == 0)
             printf("VISA\n");
