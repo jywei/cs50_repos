@@ -9,14 +9,14 @@ int main(void)
 
   for (int i = 0; i < strlen(name); i++)
   {
-    if (name[i] == ' ' && name[i + 1] != '\0' && name[i + 1] != ' ')
-    {
-      printf("%c", toupper(name[i + 1]));
-      i++;
-    }
-    else if (i == 0 && name[i] != ' ')
+    if (i == 0 && name[i] != ' ' && name[i + 1] != '\0')
     {
       printf("%c", toupper(name[i]));
+      i++;
+    }
+    else if (name[i] == ' ' && name[i + 1] != '\0' && name[i + 1] != ' ')
+    {
+      printf("%c", toupper(name[i + 1]));
       i++;
     }
   }

@@ -15,9 +15,11 @@ int main(void)
     }
     while (card_number < 0);
 
+    // Determine whether it has a valid number of digits
     int count = 0;
     long long digits = card_number;
 
+    // The total digits
     while (digits > 0)
     {
         digits /= 10;
@@ -28,7 +30,6 @@ int main(void)
         printf("INVALID\n");
 
     int number[count];
-
     for (int i = 0; i < count; i++)
     {
         number[i] = card_number % 10;
