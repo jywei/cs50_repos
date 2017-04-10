@@ -28,6 +28,7 @@ int main(int argc, string argv[])
         string plainText = GetString();
         if (plainText != NULL)
         {
+            printf("ciphertext:  ");
             // Encrypt and print
             for (int i = 0, n = strlen(plainText); i < n; i++)
             {
@@ -37,16 +38,16 @@ int main(int argc, string argv[])
                 if (isupper(plainText[i]))
                 {
                     c = ((plainText[i] - 65 + k) % 26) + 65;
-                    printf("ciphertext: %c", c);
+                    printf("%c", c);
                 }
                 else if (islower(plainText[i]))
                 {
                     c = ((plainText[i] - 97 + k) % 26) + 97;
-                    printf("ciphertext: %c", c);
+                    printf("%c", c);
                 }
                 else
                 {
-                    printf("plaintext: %c", plainText[i]);
+                    printf("%c", plainText[i]);
                 }
             }
             printf("\n");
