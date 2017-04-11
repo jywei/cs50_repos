@@ -11,8 +11,8 @@ int main(int argc, string argv[])
         printf("Usage: ./vigenere <keyword>\n");
         return 1;
     }
-    int m = strlen(argv[1]);
 
+    int m = strlen(argv[1]);
     // check if one command-line argument contains any non-alphabetical character
     for (int i = 0; i < m; i++)
     {
@@ -27,8 +27,6 @@ int main(int argc, string argv[])
     for (int i = 0, j = 0, result = 0, n = strlen(text); i < n; i++)
     {
         char letter = text[i];
-        // if the letter proves to be a non-alphabetical character, wait to apply that jth character
-        // of key to the next alphabetical character in text not yet advance to the next character in key
         char key = argv[1][(j) % m];
         // as for the characters in key, treat A and a as 0, B and b as 1, … , and Z and z as 25
         if (isupper(key))
@@ -39,6 +37,7 @@ int main(int argc, string argv[])
         {
            key -= 97;
         }
+
         if (isupper(letter))
         {
             result = (letter + key - 65) % 26 + 65;
