@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     // check if one command-line argument contains any non-alphabetical character
     for (int i = 0; i < m; i++)
     {
-        if (isalpha( argv[1][i]) == false)
+        if (isalpha(argv[1][i]) == false)
         {
             printf("Keyword must only contain letters A-Z and a-z\n");
             return 1;
@@ -46,8 +46,8 @@ int main(int argc, string argv[])
         }
         else if (islower(letter))
         {
-           result = (letter  + key - 97) % 26 + 97;
-           j++;
+            result = (letter  + key - 97) % 26 + 97;
+            j++;
         }
         // if the character in text is not a letter, output this character unchanged
         else
