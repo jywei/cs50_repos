@@ -13,7 +13,7 @@ int main(int argc, string argv[])
     }
 
     int m = strlen(argv[1]);
-    // check if one command-line argument contains any non-alphabetical character
+    // check if alphabetical
     for (int i = 0; i < m; i++)
     {
         if (isalpha(argv[1][i]) == false)
@@ -22,8 +22,12 @@ int main(int argc, string argv[])
             return 1;
         }
     }
+
     // get the message from the user
+    printf("plaintext: ");
     string text = GetString();
+    printf("ciphertext: ");
+
     for (int i = 0, j = 0, result = 0, n = strlen(text); i < n; i++)
     {
         char letter = text[i];
@@ -53,7 +57,7 @@ int main(int argc, string argv[])
         {
            result = letter;
         }
-           printf("%c", result);
+        printf("%c", result);
     }
     printf("\n");
 }
