@@ -8,7 +8,7 @@ int main(int argc, string argv[])
     // ensure proper usage
     if (argc != 2)
     {
-        printf("Usage: ./vigenere <keyword>\n");
+        printf("Usage: ./vigenere k\n");
         return 1;
     }
 
@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     {
         if (isalpha(argv[1][i]) == false)
         {
-            printf("Keyword must only contain letters A-Z and a-z\n");
+            printf("Usage: ./vigenere k\n");
             return 1;
         }
     }
@@ -31,6 +31,7 @@ int main(int argc, string argv[])
     for (int i = 0, j = 0, result = 0, n = strlen(text); i < n; i++)
     {
         char letter = text[i];
+        // input plaintext from the first letter
         char key = argv[1][(j) % m];
         // as for the characters in key, treat A and a as 0, B and b as 1, … , and Z and z as 25
         if (isupper(key))
@@ -44,12 +45,14 @@ int main(int argc, string argv[])
 
         if (isupper(letter))
         {
-            result = (letter + key - 65) % 26 + 65;
+            letter -= 65;
+            result = (letter + key) % 26 + 65;
             j++;
         }
         else if (islower(letter))
         {
-            result = (letter  + key - 97) % 26 + 97;
+            letter -= 97;
+            result = (letter + key) % 26 + 97;
             j++;
         }
         // if the character in text is not a letter, output this character unchanged
