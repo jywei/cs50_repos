@@ -1,7 +1,7 @@
 /**
  * Defines structures for students and linked lists thereof.
  */
-       
+
 typedef struct
 {
     int id;

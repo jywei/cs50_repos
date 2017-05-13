@@ -8,7 +8,7 @@
  *
  * Demonstrates use of Boolean ANDing.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 
@@ -31,7 +31,7 @@ int main(void)
     {
         printf("You picked a big number.\n");
     }
-    else 
+    else
     {
         printf("You picked an invalid number.\n");
     }

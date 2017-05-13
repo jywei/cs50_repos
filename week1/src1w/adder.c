@@ -8,13 +8,13 @@
  *
  * Demonstrates use of CS50's library.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
-    // ask user for input 
+    // ask user for input
     printf("Give me an integer: ");
     int x = GetInt();
     printf("Give me another integer: ");

@@ -8,7 +8,7 @@
  *
  * Demonstrates suboptimal design (and coughing).
  */
-       
+
 #include <stdio.h>
 
 int main(void)

@@ -101,11 +101,11 @@ void delete(void)
             else
             {
                 predptr->next = ptr->next;
-                if (ptr->student->name != NULL) 
+                if (ptr->student->name != NULL)
                 {
                     free(ptr->student->name);
                 }
-                if (ptr->student->dorm != NULL) 
+                if (ptr->student->dorm != NULL)
                 {
                     free(ptr->student->dorm);
                 }

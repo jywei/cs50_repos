@@ -8,7 +8,7 @@
  *
  * Demonstrates better design via a loop.
  */
-       
+
 #include <stdio.h>
 
 int main(void)

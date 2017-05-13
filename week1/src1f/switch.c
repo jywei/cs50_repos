@@ -8,13 +8,13 @@
  *
  * Demonstrates use of a switch.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
-    // ask user for an integer 
+    // ask user for an integer
     printf("Give me an integer between 1 and 10: ");
     int n = GetInt();
 

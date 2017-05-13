@@ -8,7 +8,7 @@
  *
  * Demonstrates strings as pointers to characters.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,12 +17,12 @@ int main(void)
 {
     // get line of text
     printf("Say something: ");
-    char* s = GetString();
- 
+    char *s = GetString();
+
     // get another line of text
     printf("Say something: ");
-    char* t = GetString();
- 
+    char *t = GetString();
+
     // try to compare strings
     if (s != NULL && t != NULL)
     {

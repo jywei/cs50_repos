@@ -8,7 +8,7 @@
  *
  * Demonstrates use of CS50's library.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 

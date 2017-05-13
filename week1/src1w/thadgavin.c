@@ -32,7 +32,7 @@
      #define          W        ; Q(out,C9),*h++/4)
           void       F(int i){  __dpmi_regs r
            ; if(i){ for(; i>=0; i-=8)while(
-                     ~Q(in,DA) 
+                     ~Q(in,DA)
                   )&8^i); for(m=0,z
               =h+j; h    <z; m     ++){ Q(
          out,C8),m     )W W W; ++h; } dosmemput
@@ -43,7 +43,7 @@
           SDL_Surface    *s; void
          F(int i){ if   (i){ SDL_SetColors(
      s,h,0,256);         SDL_UpdateRect
-     (s,0,0,0,        0); } else {  SDL_Init( 
+     (s,0,0,0,        0); } else {  SDL_Init(
        SDL_INIT_VIDEO); s=SDL_SetVideoMode
        (X,Y,8,0);       v=s->pixels; } }
                   #else

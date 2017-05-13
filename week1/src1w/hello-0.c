@@ -8,7 +8,7 @@
  *
  * Demonstrates use of printf.
  */
-       
+
 #include <stdio.h>
 
 int main(void)

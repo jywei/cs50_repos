@@ -1,7 +1,7 @@
 /**
  * Demonstrates a linked list for numbers.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>

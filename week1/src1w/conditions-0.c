@@ -9,7 +9,7 @@
  *
  * Demonstrates use of if-else construct.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 

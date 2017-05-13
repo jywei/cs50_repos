@@ -1,11 +1,11 @@
 /**
  * imprecision.c
- * 
+ *
  * David J. Malan
  * malan@harvard.edu
- * 
+ *
  * Divides one floating-point value by another.
- * 
+ *
  * Demonstrates imprecision of floating-point values.
  */
 
