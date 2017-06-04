@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 # Configure matplotlib to embed the plots in the output cells of the present notebook
-%matplotlib notebook
+# %matplotlib notebook
 
 X_train = np.array([[1,1], [2,2.5], [3,1.2], [5.5,6.3], [6,9], [7,6]]) # Define numpy array of two-dim points
 Y_train = ['red', 'red', 'red', 'blue', 'blue', 'blue'] # Define a Python built-in list (i.e., array) of strings
@@ -37,4 +37,45 @@ print(distance)
 
 min_index = np.argmin(distance) # Get the index with smallest distance
 print(Y_train[min_index])
+
+from sklearn import datasets
+digits = datasets.load_digits()
+
+print(digits.images[0])
+
+plt.figure()
+plt.imshow(digits.images[0], cmap = plt.cm.gray_r, interpolation = 'nearest')
+plt.show()
+
+print(digits.target[0])
+
+X_train = digits.data[0:10]
+Y_train = digits.target[0:10]
+
+X_test = digits.data[345]
+
+plt.figure()
+plt.imshow(digits.images[345], cmap = plt.cm.gray_r, interpolation = 'nearest')
+plt.show()
+
+num = len(X_train) # Compute the number of points in X_train
+distance = np.zeros(num) # Initialize an arrays of zeros
+for i in range(num):
+    distance[i] = dist(X_train[i], X_test) # Compute distance from X_train[i] to X_test
+min_index = np.argmin(distance) # Get the index with smallest distance
+print(Y_train[min_index])
+
+print(digits.target[min_index])
+
+num = len(X_train)
+no_errors = 0
+distance = np.zeros(num)
+for j in range(1697, 1797):
+    X_test = digits.data[j]
+    for i in range(num):
+        distance[i] = dist(X_train[i], X_test) # Compute distance from X_train[i] to X_test
+    min_index = np.argmin(distance)
+    if Y_train[min_index] != digits.target[j]:
+        no_errors += 1
+print(no_errors)
 
