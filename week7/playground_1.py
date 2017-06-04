@@ -79,3 +79,18 @@ for j in range(1697, 1797):
         no_errors += 1
 print(no_errors)
 
+X_train = digits.data[0:1000]
+Y_train = digits.target[0:1000]
+
+num = len(X_train)
+no_errors = 0
+distance = np.zeros(num)
+for j in range(1697, 1797):
+    X_test = digits.data[j]
+    for i in range(num):
+        distance[i] = dist(X_train[i], X_test) # Compute distance from X_train[i] to X_test
+    min_index = np.argmin(distance)
+    if Y_train[min_index] != digits.target[j]:
+        no_errors += 1
+print(no_errors)
+
