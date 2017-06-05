@@ -39,7 +39,7 @@ for i in range(k):
     print("Cluster %d movies:" % i, end='')
     for title in frame["Title"][labels == i]:
         print(' %s,' % title, end='')
-    print() #add a whitespace
+    print() # add a whitespace
 
     print("Cluster %d words:" % i, end='')
     for ind in order_centroids[i, :no_words]:
