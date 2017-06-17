@@ -5,7 +5,7 @@ class HTTPServer_RequestHandler(BaseHTTPRequestHandler):
 
     # GET
     def do_GET(self):
-        
+
         # send response status code
         self.send_response(200)
 
