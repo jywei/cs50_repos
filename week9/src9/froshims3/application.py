@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 class Registrant(db.Model):
 
     __tablename__ = "registrants"
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.Text)
     dorm = db.Column(db.Text)
 
@@ -24,7 +24,7 @@ class Registrant(db.Model):
 def index():
     return render_template("index.html")
 
-@app.route("/register", methods=["POST"])
+@app.route("/register", methods = ["POST"])
 def register():
     if request.form["name"] == "" or request.form["dorm"] == "":
         return render_template("failure.html")
@@ -36,13 +36,13 @@ def register():
 @app.route("/registrants")
 def registrants():
     rows = Registrant.query.all()
-    return render_template("registrants.html", registrants=rows)
+    return render_template("registrants.html", registrants = rows)
 
-@app.route("/unregister", methods=["GET", "POST"])
+@app.route("/unregister", methods = ["GET", "POST"])
 def unregister():
     if request.method == "GET":
         rows = Registrant.query.all()
-        return render_template("unregister.html", registrants=rows)
+        return render_template("unregister.html", registrants = rows)
     elif request.method == "POST":
         if request.form["id"]:
             Registrant.query.filter(Registrant.id == request.form["id"]).delete()
