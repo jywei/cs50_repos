@@ -13,7 +13,7 @@ def index():
 def register():
     if request.form["name"] == "" or request.form["dorm"] == "":
         return render_template("failure.html")
-    db.execute("INSERT INTO registrants (name, dorm) VALUES(:name, :dorm)",
+    db.execute("INSERT INTO registrants (name, dorm) VALUES (:name, :dorm)",
         name = request.form["name"], dorm = request.form["dorm"])
     return render_template("success.html")
 
